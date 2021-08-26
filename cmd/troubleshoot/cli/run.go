@@ -155,6 +155,7 @@ func runTroubleshoot(v *viper.Viper, arg string) error {
 		Namespace:                 namespace,
 		ProgressChan:              progressChan,
 		SinceTime:                 sinceTime,
+		Redact:                    v.GetBool("redact"),
 	}
 
 	archivePath, err := supportbundle.CollectSupportBundleFromSpec(&supportBundle.Spec, additionalRedactors, createOpts)
